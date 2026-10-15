@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+fiji_calibrated_plugin/java/target/
+runtime_config.json
+outputs/
+demo_assets/
+*.pt
+*.pth
+*.tif
+*.tiff
+.pytest_cache/

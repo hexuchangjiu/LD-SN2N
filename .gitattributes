@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.md whitespace=-blank-at-eol
+# Preserve exact frozen research sources and upstream notice bytes.
+fiji_calibrated_plugin/backend/noise_calibration.py -text -whitespace
+fiji_calibrated_plugin/backend/support_display.py -text -whitespace
+fiji_calibrated_plugin/backend/vendor/*.py -text -whitespace
+third_party/*.txt -text -whitespace

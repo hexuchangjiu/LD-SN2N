@@ -1,0 +1,25 @@
+{
+  "loop_energy.py": {
+    "sha256": "fe84af53a6043e7769bec7b710a80b50407d727d99df3e40dbdcaa11ccfa483e",
+    "functions": [
+      "_grad_mag",
+      "_grad_field",
+      "_contrast_scale",
+      "_gain_foreground_median",
+      "signature_from_Y",
+      "verdict"
+    ]
+  },
+  "loop_reliability.py": {
+    "sha256": "b8a48372aa4da586aca14d0d7c2d37301e5cb7e95e9d8993ecb8e3815641cd0f",
+    "functions": [
+      "decide_from_energy"
+    ]
+  },
+  "loop_map.py": {
+    "source": "E44 source_snapshot/010_loop_map.py",
+    "source_sha256": "819b7cf6ef139b58c916abb82afa98cfd24f3c949d4e7bfc7e35b1868e179fc6",
+    "modification": "Only dependency import changed to relative .energy",
+    "sha256": "d049c4322720281fa63aba8e175187880ed236aead36afac19ab1c407719385a"
+  }
+}
