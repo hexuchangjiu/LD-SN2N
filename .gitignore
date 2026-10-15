@@ -4,7 +4,7 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-fiji_calibrated_plugin/java/target/
+loop-Drift/fiji_calibrated_plugin/java/target/
 runtime_config.json
 outputs/
 demo_assets/

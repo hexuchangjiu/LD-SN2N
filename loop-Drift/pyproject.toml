@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loopdrift-research"
+version = "0.5.0"
+description = "LoopSN2N response assessment, Fiji integration, and selected DriftingSN2N objectives"
+license-files = ["LICENSE*", "third_party/*.txt"]
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["loopdrift*", "fiji_calibrated_plugin.backend*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"fiji_calibrated_plugin.backend.vendor" = ["*.json"]
