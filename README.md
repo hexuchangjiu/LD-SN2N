@@ -12,14 +12,18 @@ Open a single-channel uint16 or float32 stack with at least 34 static repeated f
 
 [Installation and use](loop-Drift/docs/INSTALL.md) · [Supported functions](loop-Drift/docs/PLUGIN_AUDIT.md) · [Verification](loop-Drift/docs/VERIFICATION.md)
 
+A small image stack, a compatible trained checkpoint and a step-by-step walkthrough are provided in [plugin/example](plugin/example/). These example assets stay outside Fiji's `plugins` folder; only the JAR needs to be installed there. See the example README for its provenance and tested scope.
+
+最小使用示例见 [plugin/example](plugin/example/)：包含图像堆栈、训练权重与操作说明。仅将 JAR 放入 Fiji 的 `plugins`，示例文件可保存在任意可读目录。
+
 ## Code
 
 ```text
-plugin/          One JAR for Fiji
+plugin/          One JAR for Fiji and a minimal usage example
 loop-Drift/      Algorithm modules, plugin source, tests and documentation
 ```
 
-The [code module](loop-Drift/README.md) provides Loop diagnostics and selected Drifting, pixel-distillation, feature-distillation and SN2N objectives. It is not the full experiment or training repository. No research images or trained weights are included.
+The [code module](loop-Drift/README.md) provides Loop diagnostics and selected Drifting, pixel-distillation, feature-distillation and SN2N objectives. It is not the full experiment or training repository. Only the small usage example is included, not the research dataset or checkpoint bank. The module README explains which directories are required for maintenance and which are optional archives.
 
 The calibrated plugin is a research tool: its formal decision remains `DEFER`, with P1–P4 reported separately as diagnostic checks. A Loop Response Map describes operator response, not pixelwise error probability. Dynamic sequences, Z-stacks, multichannel stacks and arbitrary network architectures are not supported by this entry.
 

@@ -9,6 +9,8 @@
 
 There is no separate backend or installer to download. The JAR unpacks its bundled Python source into a versioned cache and verifies the source hashes before using it. It does not modify the input images or the selected Python environment.
 
+For a first run, use the [minimal example](../../plugin/example/), which includes an image stack, trained weights and the settings used to check them. Download these files to a separate working directory, not Fiji's `plugins` folder. / 首次使用可下载[最小示例](../../plugin/example/)，按其中说明选择图像和权重；示例文件不需要放入 Fiji 安装目录。
+
 ## Python environment
 
 Python 3.10 or later, PyTorch 2.6 or later and the dependencies in [requirements.txt](../requirements.txt) are required. Python and PyTorch are not inside the JAR. Existing environments are checked automatically; an unusable candidate does not prevent checking the next candidate. A manually selected executable must pass the checks and is not silently replaced.

@@ -7,5 +7,7 @@ loop-Drift/fiji_calibrated_plugin/backend/vendor/*.py -text -whitespace
 loop-Drift/third_party/*.txt -text -whitespace
 *.zip binary
 *.jar binary
+plugin/example/*.tif binary
+plugin/example/*.pth binary
 loop-Drift/releases export-ignore
 loop-Drift/releases/**/release_manifest.json -text whitespace=cr-at-eol

@@ -13,3 +13,7 @@ demo_assets/
 *.tif
 *.tiff
 .pytest_cache/
+
+# Explicit small usage example; the research dataset and checkpoint bank remain excluded.
+!plugin/example/LAMP_C1_first150_center128_uint16.tif
+!plugin/example/SN2N_LAMP_seed400101_update24000.pth
