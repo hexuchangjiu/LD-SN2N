@@ -35,7 +35,8 @@ def main():
         p.error('Commit source edits before packaging')
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     names=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode('utf-8').split('\0')
-    files={n:ROOT/n for n in names if n}
+    # Published archives are immutable downloads, not inputs to future archives.
+    files={n:ROOT/n for n in names if n and not n.startswith('releases/')}
     for n in files:
         if Path(n).suffix.lower() in {'.pt','.pth','.tif','.tiff','.pkl'} or n.startswith(('.git/','outputs/','.venv/')):
             raise ValueError('Unexpected research/binary asset in source tree: '+n)

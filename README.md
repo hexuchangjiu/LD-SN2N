@@ -6,6 +6,7 @@ ImageJ/Fiji plugin for controlled denoise–renoise response assessment, plus se
 
 ## Start here / 从这里开始
 
+- [Download the verified 0.4.0 bundle / 下载已验证的完整安装包](releases/0.4.0/README.md)
 - [Install and use / 安装与使用](docs/INSTALL.md)
 - [Plugin capability audit / 插件完成度](docs/PLUGIN_AUDIT.md)
 - [Selected algorithms / 代表性算法](docs/ALGORITHMS.md)

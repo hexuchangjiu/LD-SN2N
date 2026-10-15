@@ -1,0 +1,535 @@
+{
+  "version": "0.4.0",
+  "git_commit": "c508543418044c280954c0b74826bba5c54276bd",
+  "public_license_cleared": false,
+  "source": {
+    "archive": "LD-SN2N-0.4.0-source.zip",
+    "bytes": 125301,
+    "sha256": "fa5a6c423714997163bdfaeea64035e75996ed7c008c5b7cf24e946949056773",
+    "files": [
+      {
+        "path": "LD-SN2N-0.4.0/.gitattributes",
+        "bytes": 352,
+        "sha256": "d96ec2cb2d34f017d85c01ef75d8bcee6c1268d69487a5b5cecf1230e523e806"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/.github/workflows/python.yml",
+        "bytes": 514,
+        "sha256": "85f6675cc8bab076c3ab5954b08d78de6abe6fdec7aa08d1a239fb39245bc359"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/.gitignore",
+        "bytes": 172,
+        "sha256": "55cce0e63e33197a42c921d6fbc8c3979656c55b58d30bfff6968ce27dd9b119"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/LICENSE_STATUS.md",
+        "bytes": 3049,
+        "sha256": "720952ff2965ef8755d4d116dd91aed398a778e94a59d5249822dfb29d3f95b2"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/README.md",
+        "bytes": 4986,
+        "sha256": "69ede6cebfb8aeb4f0c7a40d6675a752758efb5c4aa69b916c32bc4628b8c63e"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/ALGORITHMS.md",
+        "bytes": 7172,
+        "sha256": "cd18ad8717fb260f702fb3134a9830a0578feb45d5edaa40ec5938943b459e12"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/INSTALL.md",
+        "bytes": 6415,
+        "sha256": "f370e3fae66c68ce016804f40ff8c48f235d4943e38cb3f6c3e19d685e831cfe"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/PLUGIN_AUDIT.md",
+        "bytes": 6088,
+        "sha256": "039873066af2c34d878e2fd10475499e4729c6545d2b4555fab47042788e616e"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/VERIFICATION.md",
+        "bytes": 3646,
+        "sha256": "fbe812becf64ca3a6d091f2b10d32fb949cf22f42965347d763fc311a704dc7d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/verification_summary.json",
+        "bytes": 1581,
+        "sha256": "f36b5b1f8d3b9b8fb25d610362bdde3afd0f288855cc15c7d41421763e0c443f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/examples/algorithm_demo.py",
+        "bytes": 2074,
+        "sha256": "4f04b8db31199a9c61e15bce224e4dd6beceb75e92ddf9220c08ad0e0d2cb80b"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/examples/make_engineering_demo.py",
+        "bytes": 1999,
+        "sha256": "54e1be592fb13d535eba13425b5ec9f26726f04c9b2cc4e551053f861e823916"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/bridge.py",
+        "bytes": 23339,
+        "sha256": "656946347177a716bc6185be212ed9be8507b0fb17f5885d4a59ee9a20447e85"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/model_adapter.py",
+        "bytes": 14487,
+        "sha256": "7fec7753d62dd05c1b54774e8ec6831ca2cdddac5b9a551fdc42653a069beb76"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/noise_calibration.py",
+        "bytes": 20469,
+        "sha256": "8170f3e3778569737d0fab0110238babe941f460690df2f10951a2ea2990dae0"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/support_display.py",
+        "bytes": 5877,
+        "sha256": "63754fe9864428ab8c1aa2f41334a273d5864480c6e28d8761d73e2c164e8830"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/aunet.py",
+        "bytes": 3502,
+        "sha256": "23846ae4f5c358d43999a2b4837cd87949a1fb8d2b3e30b680dea9d380d8f330"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/energy.py",
+        "bytes": 8687,
+        "sha256": "f10d94d163135492eb33aaec87118b9d9168a63f3dd94ff07066b999c1c4adda"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/loop_map.py",
+        "bytes": 19047,
+        "sha256": "d049c4322720281fa63aba8e175187880ed236aead36afac19ab1c407719385a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/source_identity.json",
+        "bytes": 787,
+        "sha256": "e1edc7855bf8e2d0a7568d24cb480b5d313420e2c71bb62a3b186dbabdd3c352"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/build_local.ps1",
+        "bytes": 912,
+        "sha256": "9c9e1a4b006f05bceefc8c8e903c105bb4e06a0fa1a4b6baefc331950a434365"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/main/java/org/loopsn2n/fiji/LoopSN2NCalibratedCommand.java",
+        "bytes": 36644,
+        "sha256": "6b38a075cce083d25034caab904cfde7ee6197ac39ef32e39a67340c10e87b9a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/main/java/org/loopsn2n/fiji/RuntimeResolver.java",
+        "bytes": 4417,
+        "sha256": "fb34fa11b061121877ae582c8edb04d362cbb3bfe15c766844b3665a4c728bd6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedBackendHarness.java",
+        "bytes": 822,
+        "sha256": "789c01e3d7811f445cec03d92d2fdc3d28d4d38ce71d68108610f7932434d083"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedFrontendSmokeTest.java",
+        "bytes": 8040,
+        "sha256": "918c037a8cb5cc6d5345f1b6f64ed18cf8f5012d1e220ee79493d64dee9f80c3"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedInstalledRuntimeHarness.java",
+        "bytes": 1400,
+        "sha256": "e9c478aa42a39736b68b6350ec70cffacbfc12b4b836dfb3ac690cfac549226f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedPluginDiscoverySmokeTest.java",
+        "bytes": 1362,
+        "sha256": "e1d0c58f57c02560cc67759acb60387d9d74feea9642b5048ece5387b594e54d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedRuntimeSmokeTest.java",
+        "bytes": 3582,
+        "sha256": "52df3d467f23b1f17f3e681ff5a89ed83fb30a27a1b4658b9a9d6c379e2d31b7"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedStackExportHarness.java",
+        "bytes": 3808,
+        "sha256": "000987400c5637cd3c7885c2e8150454f1cbe604ca13878de944f0e54b85ac94"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/__init__.py",
+        "bytes": 476,
+        "sha256": "077186e099d743f64b91e5480d3ffd9f34067aac622bf814cc8fdba239db264a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/drifting.py",
+        "bytes": 4820,
+        "sha256": "b063d3babb5a0692379550377800bf6d39253d7e4d94dac1ee13a710d04b76fa"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/features.py",
+        "bytes": 2852,
+        "sha256": "e15bf95429d23f72e94272aaadcc6e55b33b3ff79d9351d2225e03ca1c939db6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/loop.py",
+        "bytes": 3536,
+        "sha256": "b7ef2c49acf4f2f91f519aeace47fb0d22536bce8feae80dc2a662a66e19a6f6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/objectives.py",
+        "bytes": 7604,
+        "sha256": "a5360ca21a0d77dc86d7998ad73ba2fe2d8e7ea2911ac63880c14c8427f6f8f5"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/pyproject.toml",
+        "bytes": 615,
+        "sha256": "d0c107e5c1704258d199e014c215c48cb0bf4ebb68aa91dbeee0651644054518"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/requirements.txt",
+        "bytes": 116,
+        "sha256": "3bdc6b33ca6bc07ea7767f67b1313ed0d864840f84ad3381da1656c395ba3ea5"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/build_fiji.py",
+        "bytes": 10883,
+        "sha256": "a4ed22cb2f0c635c5ab6d82dfc5f7f084c62a1355c711aac8cbb33b5c7105710"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/check_runtime.py",
+        "bytes": 2140,
+        "sha256": "8fe84624334f9cdfc856f81d13e3cea334edeb6703a068bc278d919d8499887f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/install.py",
+        "bytes": 11413,
+        "sha256": "d066b61066dd3d004b8611dab78c3dc693c0e9bb8402a844a681c27e2fd6499d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/package_release.py",
+        "bytes": 3452,
+        "sha256": "6d97ea905fd68cf1304b091a848e9281054e1a717b08907130f593cf8aaa4525"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/run_assessment.py",
+        "bytes": 2300,
+        "sha256": "069894bd43a92741e8bad7e1d97100de835df94257b9edeaf80d3604885a1e64"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/verify_release.py",
+        "bytes": 1946,
+        "sha256": "21287d988adb3629d0a4b18db2ae6b6742396b58cad6969933143189931ceb94"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_algorithms.py",
+        "bytes": 13292,
+        "sha256": "239a2f6767ca838f617f4816dc7a1646b19887d40535640292c574c7d4597968"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_calibrated_bridge.py",
+        "bytes": 10092,
+        "sha256": "460f4bcd8c15fc1c71f2e72f63084ae99eb912f2cdef7657e6a497b9bab03ea9"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_model_adapter.py",
+        "bytes": 10411,
+        "sha256": "b47b481ace66b40d2787117acdc49e05f7a69cc868ca1baef6ba64b9302ce2c0"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_noise_calibration.py",
+        "bytes": 7857,
+        "sha256": "25d78a839cf5eea9bf487e388563643bb194b90797775daa9b681618f49cf027"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_support_display.py",
+        "bytes": 3651,
+        "sha256": "e79b01eb8db720481f7a8080392b594230f19727fa9425badcbb6589ac76c679"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_install_build.py",
+        "bytes": 9362,
+        "sha256": "70a8cd1b05531460baff00dbbfe46d085fa2a72e876baf2c7a4af6d50f2b46c6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/third_party/SN2N_upstream_LICENSE.txt",
+        "bytes": 25280,
+        "sha256": "0b95a8b6b16d79059286e5f9998498a70e0af5f2262a352ccbb12bcfb2c2c6e3"
+      }
+    ]
+  },
+  "installation": {
+    "archive": "LD-SN2N-0.4.0-fiji-bundle.zip",
+    "bytes": 2839157,
+    "sha256": "8f8db2ce070aae7a4497fc33b70efc3b4bde6605536c3f3ab231a5e2e17a3b65",
+    "files": [
+      {
+        "path": "LD-SN2N-0.4.0/.gitattributes",
+        "bytes": 352,
+        "sha256": "d96ec2cb2d34f017d85c01ef75d8bcee6c1268d69487a5b5cecf1230e523e806"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/.github/workflows/python.yml",
+        "bytes": 514,
+        "sha256": "85f6675cc8bab076c3ab5954b08d78de6abe6fdec7aa08d1a239fb39245bc359"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/.gitignore",
+        "bytes": 172,
+        "sha256": "55cce0e63e33197a42c921d6fbc8c3979656c55b58d30bfff6968ce27dd9b119"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/LICENSE_STATUS.md",
+        "bytes": 3049,
+        "sha256": "720952ff2965ef8755d4d116dd91aed398a778e94a59d5249822dfb29d3f95b2"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/README.md",
+        "bytes": 4986,
+        "sha256": "69ede6cebfb8aeb4f0c7a40d6675a752758efb5c4aa69b916c32bc4628b8c63e"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/demo_assets/DEMO.json",
+        "bytes": 399,
+        "sha256": "c54ba7a0592a0abcbeecabfe50f1c40c16a8403e684d3d63cb02cb88bfb22bce"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/demo_assets/NOT_TRAINED_constant_control.pt",
+        "bytes": 69147398,
+        "sha256": "09000ad94244c08ec580295529fb960cb491cdb50d89fb147f47a9c4ba739c51"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/demo_assets/synthetic_static_150frames.tif",
+        "bytes": 3098810,
+        "sha256": "ce8e13b5d6d8f289a02264dab93effc7bb31256418af5e3dc9e76c44287f9151"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/dist/loopdrift_research-0.4.0-py3-none-any.whl",
+        "bytes": 54192,
+        "sha256": "4e55bf3776f766241d3cfbf99ac676e72cae7f6f728d56d8ba5b9aad32d0cd38"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/dist/loopsn2n-calibrated-fiji-0.4.0.jar",
+        "bytes": 30209,
+        "sha256": "7161464ff77022576341bfbe54bef3ef33487a952a8e5d602d9f0eac3a2bfc6b"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/ALGORITHMS.md",
+        "bytes": 7172,
+        "sha256": "cd18ad8717fb260f702fb3134a9830a0578feb45d5edaa40ec5938943b459e12"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/INSTALL.md",
+        "bytes": 6415,
+        "sha256": "f370e3fae66c68ce016804f40ff8c48f235d4943e38cb3f6c3e19d685e831cfe"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/PLUGIN_AUDIT.md",
+        "bytes": 6088,
+        "sha256": "039873066af2c34d878e2fd10475499e4729c6545d2b4555fab47042788e616e"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/VERIFICATION.md",
+        "bytes": 3646,
+        "sha256": "fbe812becf64ca3a6d091f2b10d32fb949cf22f42965347d763fc311a704dc7d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/docs/verification_summary.json",
+        "bytes": 1581,
+        "sha256": "f36b5b1f8d3b9b8fb25d610362bdde3afd0f288855cc15c7d41421763e0c443f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/examples/algorithm_demo.py",
+        "bytes": 2074,
+        "sha256": "4f04b8db31199a9c61e15bce224e4dd6beceb75e92ddf9220c08ad0e0d2cb80b"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/examples/make_engineering_demo.py",
+        "bytes": 1999,
+        "sha256": "54e1be592fb13d535eba13425b5ec9f26726f04c9b2cc4e551053f861e823916"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/bridge.py",
+        "bytes": 23339,
+        "sha256": "656946347177a716bc6185be212ed9be8507b0fb17f5885d4a59ee9a20447e85"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/model_adapter.py",
+        "bytes": 14487,
+        "sha256": "7fec7753d62dd05c1b54774e8ec6831ca2cdddac5b9a551fdc42653a069beb76"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/noise_calibration.py",
+        "bytes": 20469,
+        "sha256": "8170f3e3778569737d0fab0110238babe941f460690df2f10951a2ea2990dae0"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/support_display.py",
+        "bytes": 5877,
+        "sha256": "63754fe9864428ab8c1aa2f41334a273d5864480c6e28d8761d73e2c164e8830"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/aunet.py",
+        "bytes": 3502,
+        "sha256": "23846ae4f5c358d43999a2b4837cd87949a1fb8d2b3e30b680dea9d380d8f330"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/energy.py",
+        "bytes": 8687,
+        "sha256": "f10d94d163135492eb33aaec87118b9d9168a63f3dd94ff07066b999c1c4adda"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/loop_map.py",
+        "bytes": 19047,
+        "sha256": "d049c4322720281fa63aba8e175187880ed236aead36afac19ab1c407719385a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/backend/vendor/source_identity.json",
+        "bytes": 787,
+        "sha256": "e1edc7855bf8e2d0a7568d24cb480b5d313420e2c71bb62a3b186dbabdd3c352"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/build_local.ps1",
+        "bytes": 912,
+        "sha256": "9c9e1a4b006f05bceefc8c8e903c105bb4e06a0fa1a4b6baefc331950a434365"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/main/java/org/loopsn2n/fiji/LoopSN2NCalibratedCommand.java",
+        "bytes": 36644,
+        "sha256": "6b38a075cce083d25034caab904cfde7ee6197ac39ef32e39a67340c10e87b9a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/main/java/org/loopsn2n/fiji/RuntimeResolver.java",
+        "bytes": 4417,
+        "sha256": "fb34fa11b061121877ae582c8edb04d362cbb3bfe15c766844b3665a4c728bd6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedBackendHarness.java",
+        "bytes": 822,
+        "sha256": "789c01e3d7811f445cec03d92d2fdc3d28d4d38ce71d68108610f7932434d083"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedFrontendSmokeTest.java",
+        "bytes": 8040,
+        "sha256": "918c037a8cb5cc6d5345f1b6f64ed18cf8f5012d1e220ee79493d64dee9f80c3"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedInstalledRuntimeHarness.java",
+        "bytes": 1400,
+        "sha256": "e9c478aa42a39736b68b6350ec70cffacbfc12b4b836dfb3ac690cfac549226f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedPluginDiscoverySmokeTest.java",
+        "bytes": 1362,
+        "sha256": "e1d0c58f57c02560cc67759acb60387d9d74feea9642b5048ece5387b594e54d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedRuntimeSmokeTest.java",
+        "bytes": 3582,
+        "sha256": "52df3d467f23b1f17f3e681ff5a89ed83fb30a27a1b4658b9a9d6c379e2d31b7"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/fiji_calibrated_plugin/java/src/test/java/org/loopsn2n/fiji/CalibratedStackExportHarness.java",
+        "bytes": 3808,
+        "sha256": "000987400c5637cd3c7885c2e8150454f1cbe604ca13878de944f0e54b85ac94"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/__init__.py",
+        "bytes": 476,
+        "sha256": "077186e099d743f64b91e5480d3ffd9f34067aac622bf814cc8fdba239db264a"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/drifting.py",
+        "bytes": 4820,
+        "sha256": "b063d3babb5a0692379550377800bf6d39253d7e4d94dac1ee13a710d04b76fa"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/features.py",
+        "bytes": 2852,
+        "sha256": "e15bf95429d23f72e94272aaadcc6e55b33b3ff79d9351d2225e03ca1c939db6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/loop.py",
+        "bytes": 3536,
+        "sha256": "b7ef2c49acf4f2f91f519aeace47fb0d22536bce8feae80dc2a662a66e19a6f6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/loopdrift/objectives.py",
+        "bytes": 7604,
+        "sha256": "a5360ca21a0d77dc86d7998ad73ba2fe2d8e7ea2911ac63880c14c8427f6f8f5"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/pyproject.toml",
+        "bytes": 615,
+        "sha256": "d0c107e5c1704258d199e014c215c48cb0bf4ebb68aa91dbeee0651644054518"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/requirements.txt",
+        "bytes": 116,
+        "sha256": "3bdc6b33ca6bc07ea7767f67b1313ed0d864840f84ad3381da1656c395ba3ea5"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/build_fiji.py",
+        "bytes": 10883,
+        "sha256": "a4ed22cb2f0c635c5ab6d82dfc5f7f084c62a1355c711aac8cbb33b5c7105710"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/check_runtime.py",
+        "bytes": 2140,
+        "sha256": "8fe84624334f9cdfc856f81d13e3cea334edeb6703a068bc278d919d8499887f"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/install.py",
+        "bytes": 11413,
+        "sha256": "d066b61066dd3d004b8611dab78c3dc693c0e9bb8402a844a681c27e2fd6499d"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/package_release.py",
+        "bytes": 3452,
+        "sha256": "6d97ea905fd68cf1304b091a848e9281054e1a717b08907130f593cf8aaa4525"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/run_assessment.py",
+        "bytes": 2300,
+        "sha256": "069894bd43a92741e8bad7e1d97100de835df94257b9edeaf80d3604885a1e64"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/scripts/verify_release.py",
+        "bytes": 1946,
+        "sha256": "21287d988adb3629d0a4b18db2ae6b6742396b58cad6969933143189931ceb94"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_algorithms.py",
+        "bytes": 13292,
+        "sha256": "239a2f6767ca838f617f4816dc7a1646b19887d40535640292c574c7d4597968"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_calibrated_bridge.py",
+        "bytes": 10092,
+        "sha256": "460f4bcd8c15fc1c71f2e72f63084ae99eb912f2cdef7657e6a497b9bab03ea9"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_model_adapter.py",
+        "bytes": 10411,
+        "sha256": "b47b481ace66b40d2787117acdc49e05f7a69cc868ca1baef6ba64b9302ce2c0"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_noise_calibration.py",
+        "bytes": 7857,
+        "sha256": "25d78a839cf5eea9bf487e388563643bb194b90797775daa9b681618f49cf027"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_fiji_support_display.py",
+        "bytes": 3651,
+        "sha256": "e79b01eb8db720481f7a8080392b594230f19727fa9425badcbb6589ac76c679"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/tests/test_install_build.py",
+        "bytes": 9362,
+        "sha256": "70a8cd1b05531460baff00dbbfe46d085fa2a72e876baf2c7a4af6d50f2b46c6"
+      },
+      {
+        "path": "LD-SN2N-0.4.0/third_party/SN2N_upstream_LICENSE.txt",
+        "bytes": 25280,
+        "sha256": "0b95a8b6b16d79059286e5f9998498a70e0af5f2262a352ccbb12bcfb2c2c6e3"
+      }
+    ]
+  },
+  "jar_sha256": "7161464ff77022576341bfbe54bef3ef33487a952a8e5d602d9f0eac3a2bfc6b"
+}
