@@ -18,6 +18,9 @@ project computations, not official BioSR results or measured dark frames.
 fairSIM v1.4.1: https://github.com/fairSIM/fairSIM/tree/v1.4.1
 fairSIM is obtained from its authors under the GNU General Public License
 version 2. The corresponding source and license are available at the
-link above. The fairSIM adapter is accompanied by its source and license.
+link above; a copy of fairSIM's license is in
+examples/runtime/raw/recon_assets/COPYING-fairSIM. FairSimBridge.java
+and its class file are the project's adapter to that upstream library;
+the adapter source is included next to the class.
 Fiji/ImageJ, Python, PyTorch, NumPy, SciPy and tifffile are separate
 software distributions with their own licenses.
