@@ -1,8 +1,9 @@
 The BSD 3-Clause license in LICENSE applies to original project software.
 The two example checkpoints are numeric parameter arrays, not executable
 archives. They and the simulation image are provided with the rights
-holder's permission for public distribution. The software license does
-not relicense these files or any third-party work.
+holder's permission for public distribution so that users can run the
+examples. The software license does not relicense these files or any
+third-party work.
 
 BioSR: Chang Qiao and Di Li, BioSR: a biological image dataset for
 super-resolution microscopy, version 9.

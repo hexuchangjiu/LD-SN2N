@@ -14,7 +14,7 @@ To install just one example, add `--example simulation` or `--example biosr`. �
 
 ## Run · 运行
 
-Restart Fiji and open **Plugins → LoopSN2N**. Select an image and its matching model, then click **一键分析** (Analyze).
+Restart Fiji and open **Plugins → LoopSN2N**. Select an image and its matching model, then click **一键分析** (Analyze). Leave at least 21 GiB free on the drive containing your home folder; results are saved in `LoopSN2N_results` there.
 
 | Image · 图像 | Model · 模型 | Feedback · 循环 |
 | --- | --- | --- |
