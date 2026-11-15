@@ -1,0 +1,22 @@
+The BSD 3-Clause license in LICENSE applies to original project software.
+The two example checkpoints are numeric parameter arrays, not executable
+archives. They and the simulation image are provided with the rights
+holder's permission for public distribution. The software license does
+not relicense these files or any third-party work.
+
+BioSR: Chang Qiao and Di Li, BioSR: a biological image dataset for
+super-resolution microscopy, version 9.
+https://doi.org/10.6084/m9.figshare.13264793.v9
+Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+BioSR_MT.mrc is Microtubules/Cell_002/RawSIMData_level_05.mrc under
+a shorter name; the image bytes and the 488 nm OTF are unchanged.
+Example calibration arrays, modeled re-exposures and denoised images are
+project computations, not official BioSR results or measured dark frames.
+
+fairSIM v1.4.1: https://github.com/fairSIM/fairSIM/tree/v1.4.1
+fairSIM is obtained from its authors under the GNU General Public License
+version 2. The corresponding source and license are available at the
+link above. The fairSIM adapter is accompanied by its source and license.
+Fiji/ImageJ, Python, PyTorch, NumPy, SciPy and tifffile are separate
+software distributions with their own licenses.

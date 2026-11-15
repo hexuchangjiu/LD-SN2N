@@ -29,8 +29,8 @@ def spatial_feature_groups(features: Mapping[str, Tensor], pool_size: int = 4):
         b, c, h, w = values.shape
         if h % pool_size or w % pool_size or min(h, w) < pool_size:
             raise ValueError(f"{name}: spatial dimensions must be divisible by pool_size")
-        means = values.reshape(b, c, pool_size, h // pool_size,
-                               pool_size, w // pool_size).mean(dim=(3, 5))
+        kernel = (h // pool_size, w // pool_size)
+        means = torch.nn.functional.avg_pool2d(values, kernel, stride=kernel)
         grouped[name] = means.permute(2, 3, 0, 1).reshape(pool_size ** 2, b, c)
     return grouped
 

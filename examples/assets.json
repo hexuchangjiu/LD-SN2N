@@ -1,0 +1,21 @@
+[
+  ["../plugin/LoopSN2N_Fiji.jar", "shared", 52185, "8e66fd896b6f9e04dcf5e2e4e609ec41f068c0ea201b18d8f177d6b6c00c38ae"],
+  ["checkpoint/BioSR_MT.npz", "biosr", 63978335, "c5e1d221f9f84a5fda53f129d493901f7626e07b38e07a0249815f238a09f4f5"],
+  ["checkpoint/Simulation.npz", "simulation", 63923574, "d126ce3f37f6d5b44f5dc5ed1f1ead1b4bc95e45212eae8a693c131246e8c1c2"],
+  ["data/BioSR_MT.mrc", "biosr", 4537096, "0aaf8d8ae16a8e46eabdd86dd01e182a4053aae5e56fcb46781eea54bf564b14"],
+  ["data/Simulation.tif", "simulation", 4228132, "6e5525ca9296a6c35968374fbe77d03f84240f981e2e36f9cb1d2a23ea3b18fe"],
+  ["runtime/analyze.py", "simulation", 6766, "949d389d3601eb05473845d85f4d95d9c6d9ba486ec0f6ce6b4577f17bb4b1d9"],
+  ["runtime/parameters.py", "shared", 2810, "320917c85d07038856d76b351db8a5b14534b2475116d7981da863be829f8f4d"],
+  ["runtime/raw/camera.py", "biosr", 2794, "a9a6470a32284c64b3e998dece299075ffd0df76c12670e599c4eaf3b54ba1e5"],
+  ["runtime/raw/camera_qa.json", "biosr", 1486, "70cc669875e73162f7b9a2bd6a934dd6f856f15d49ed58cd28cdac3a3c5f68e5"],
+  ["runtime/raw/camera_transfer.py", "biosr", 1860, "47fc2719251a7db595498e46313c6fc8c5ca1b99c3cf248f3a9d37ca37010d98"],
+  ["runtime/raw/counts/calibration.json", "biosr", 1736, "3ea412c904167a72cb4d63ec0229467166bfed92ea2f2938b2d9cb3b84e6ce0c"],
+  ["runtime/raw/counts/camera_model.npz", "biosr", 41603720, "b567289e7f087678b747c79f8a1ca7b784cb66142cd24774b35277352ff6d0c9"],
+  ["runtime/raw/files.sha256", "biosr", 973, "72ea8cc1422bb0c2076b653a01e9e745cc8332d95f52c80c3b5c347e76422a03"],
+  ["runtime/raw/native_D1.f32", "biosr", 4032064, "c2d76dfd0c92cc5e77bdbfff7324db174de6f5f91f08158d8b61081c1af0d015"],
+  ["runtime/raw/recon_assets/COPYING-fairSIM", "biosr", 18046, "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73"],
+  ["runtime/raw/recon_assets/FairSimBridge.class", "biosr", 9827, "152d1c3ee0e196b73f15a312f5ecb4d0facf48b2fe048a061a0d524b1aa950cf"],
+  ["runtime/raw/recon_assets/FairSimBridge.java", "biosr", 5669, "8e1db2eae344e272a8e3f560c3ca99aaab2790ab1ab5bd615158812ae60d1dd3"],
+  ["runtime/raw/recon_assets/TIRF_OTF2D_488.mrc", "biosr", 3080, "e496e544605e9b4a702af028b1cdd946be4ee24e6ba62e845475fda06a8a363a"],
+  ["runtime/raw/run_loop.py", "biosr", 14438, "d579a449b2a99d0027a40ebc4151f1711df437e36f7a63267a5c2a72151ecbc5"]
+]

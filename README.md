@@ -1,32 +1,30 @@
-# LoopSN2N / DriftingSN2N
+# LoopSN2N
 
-LoopSN2N measures how a denoiser responds to repeated, controlled noise challenges. It combines stability and structure diagnostics with a spatial Loop Response Map. DriftingSN2N explores distribution-based learning with a paired self-supervised constraint.
+## Install · 安装
 
-## Fiji plugin
+Close [Fiji](https://fiji.sc/), download and extract this repository, and open a terminal in the extracted folder. With Python 3.10 or 3.11, run the command below. Replace the path with the Fiji directory that contains `plugins` and `jars`.
 
-Download [LoopSN2N-0.5.0.jar](plugin/LoopSN2N-0.5.0.jar?raw=true), place it in Fiji's `plugins` folder, and restart Fiji. Open **Plugins → LoopSN2N → Calibrate noise and assess (research)**.
+关闭 Fiji，解压仓库，在仓库目录运行以下命令。路径指向 Fiji 安装目录；第一次安装需要联网。
 
-The JAR contains the interface, Python backend, noise calibration and Map code. It unpacks its backend on first use and checks existing Python environments. No separate backend folder or installer is needed. **Python and PyTorch are not bundled.** A compatible environment needs Python 3.10 or later, PyTorch 2.6 or later, and the packages in [requirements.txt](loop-Drift/requirements.txt). The plugin reports missing dependencies; it does not install packages or change your environments.
-
-Open a single-channel uint16 or float32 stack with at least 34 static repeated frames, then choose a compatible SN2N AUnet checkpoint and an output folder. The selected plane is analysed at full size. CPU execution is supported; a working CUDA environment is optional. If automatic discovery cannot find your environment, select its Python executable in the advanced options.
-
-[Installation and use](loop-Drift/docs/INSTALL.md) · [Supported functions](loop-Drift/docs/PLUGIN_AUDIT.md) · [Verification](loop-Drift/docs/VERIFICATION.md)
-
-A small image stack, a compatible trained checkpoint and a step-by-step walkthrough are provided in [plugin/example](plugin/example/). These example assets stay outside Fiji's `plugins` folder; only the JAR needs to be installed there. See the example README for its provenance and tested scope.
-
-最小使用示例见 [plugin/example](plugin/example/)：包含图像堆栈、训练权重与操作说明。仅将 JAR 放入 Fiji 的 `plugins`，示例文件可保存在任意可读目录。
-
-## Code
-
-```text
-plugin/          One JAR for Fiji and a minimal usage example
-loop-Drift/      Algorithm modules, plugin source, tests and documentation
+```sh
+python examples/prepare.py --fiji "C:/Fiji.app"
 ```
 
-The [code module](loop-Drift/README.md) provides Loop diagnostics and selected Drifting, pixel-distillation, feature-distillation and SN2N objectives. It is not the full experiment or training repository. Only the small usage example is included, not the research dataset or checkpoint bank. The module README explains which directories are required for maintenance and which are optional archives.
+To install just one example, add `--example simulation` or `--example biosr`. 只需一个示例时，在命令末尾加上对应选项。
 
-The calibrated plugin is a research tool: its formal decision remains `DEFER`, with P1–P4 reported separately as diagnostic checks. A Loop Response Map describes operator response, not pixelwise error probability. Dynamic sequences, Z-stacks, multichannel stacks and arbitrary network architectures are not supported by this entry.
+## Run · 运行
 
-## License
+Restart Fiji and open **Plugins → LoopSN2N**. Select an image and its matching model, then click **一键分析** (Analyze).
 
-This repository remains private while the project license and upstream software permissions are being resolved. See [licensing and attribution](loop-Drift/LICENSE_STATUS.md).
+| Image · 图像 | Model · 模型 | Feedback · 循环 |
+| --- | --- | --- |
+| `Simulation.tif` | `Simulation.npz` | Full 2048 × 2048 simulated field, with the paired simulation noise setting. 全幅仿真图，使用配套仿真噪声。 |
+| `BioSR_MT.mrc` | `BioSR_MT.npz` | Nine measured microtubule phases. Each feedback step models a new raw exposure, reconstructs it with fairSIM, then denoises. 从原始九相位模拟再曝光，再重建、去噪。 |
+
+## Read D1 and LRM · 看结果
+
+**D1**, on the left, is the first denoised image. Use **对照输入** to switch between it and the input. 左图 D1 是保留的去噪结果；后续循环不替代 D1。
+
+**LRM**, on the right, shows the local response to repeated perturbations. Blue indicates weaker gradients; orange indicates stronger gradients. Within the same hue, brighter means more stable across streams. Gray alone does not establish that a structure was preserved. 右图中蓝色表示梯度减弱，橙色表示增强；同一色相下越亮，跨流响应越稳定。颜色不是重建正确率。
+
+Choose **查看循环** to inspect the first stream, or **导出结果** to save `D1.tif` and `LRM.tif`. **重开导出** reopens the saved result. A pass describes this image–model pair under the example settings, not ground-truth accuracy.

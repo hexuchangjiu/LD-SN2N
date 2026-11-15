@@ -1,4 +1,4 @@
-"""Representative paired, unpaired and spatial SN2N constraint objectives.
+"""Paired distillation, unpaired Drifting and spatial SN2N objectives.
 
 No pair generation, architecture, optimizer, training data or teacher is included.
 The caller owns sampling independence and a common intensity/feature coordinate.
@@ -69,32 +69,27 @@ def sn2n_constraint(output_a: Tensor, output_b: Tensor | None,
 
 
 def feature_objectives(output: Tensor, paired_teacher: Tensor | None,
-                       positive: Tensor | None, encoder: nn.Module | None = None,
-                       *, pool_size: int = 4, feature_scale: float = 1.0,
-                       temperature: float = 0.2, need_feature: bool = True,
+                       positive: Tensor, encoder: nn.Module,
+                       *, pool_size: int = 4, need_feature: bool = True,
                        need_drift: bool = True):
     """Equal-weight objectives across the same named feature groups.
 
-    A frozen eval-mode encoder may expose .features(image) -> mapping; without it,
-    only raw pooled mean/RMS are used. Paired KD retains sample correspondence;
-    Drifting requires an independent positive bank (batch sizes may differ).
-    feature_scale is explicit and fixed: no E59 adaptive scale matching is claimed.
-    It divides all groups for BOTH objective families, with temperature expressed
-    in that scaled coordinate. Neither teachers nor positive paths get gradients.
+    The frozen encoder exposes .features(image) -> named feature maps.
+    Both objectives use the same detached scale from student queries and
+    independent teacher positives, even when only the paired loss is used.
+    The paired target retains sample correspondence; the positive bank does not.
     """
     if not need_feature and not need_drift:
         return {}, {}
-    scale = _coefficient(feature_scale, "feature_scale", positive=True)
     _image(output)
-    if encoder is not None:
-        if not isinstance(encoder, nn.Module) or not callable(getattr(encoder, "features", None)):
-            raise ValueError("encoder must be an nn.Module with a features method")
-        if any(module.training for module in encoder.modules()) or any(p.requires_grad for p in encoder.parameters()):
-            raise ValueError("encoder must be in eval mode with all parameters frozen")
+    if not isinstance(encoder, nn.Module) or not callable(getattr(encoder, "features", None)):
+        raise ValueError("encoder must be an nn.Module with a features method")
+    if any(module.training for module in encoder.modules()) or any(p.requires_grad for p in encoder.parameters()):
+        raise ValueError("encoder must be in eval mode with all parameters frozen")
 
     def extract(value):
-        learned = None if encoder is None else encoder.features(value)
-        if learned is not None and not isinstance(learned, Mapping):
+        learned = encoder.features(value)
+        if not isinstance(learned, Mapping):
             raise ValueError("encoder.features must return a named mapping")
         return image_feature_groups(value, learned, pool_size)
 
@@ -105,27 +100,24 @@ def feature_objectives(output: Tensor, paired_teacher: Tensor | None,
                 raise ValueError("paired_teacher is required for feature objective")
             _matching(output, paired_teacher)
             paired = extract(paired_teacher.detach())
-        if need_drift:
-            if positive is None:
-                raise ValueError("positive is required for drifting objective")
-            _image(positive)
-            if output.shape[1:] != positive.shape[1:] or output.device != positive.device:
-                raise ValueError("positive must match output channels, spatial shape and device")
-            positives = extract(positive.detach())
+        _image(positive, "independent positives")
+        if output.shape[1:] != positive.shape[1:] or output.device != positive.device:
+            raise ValueError("positive must match output channels, spatial shape and device")
+        positives = extract(positive.detach())
     losses, diagnostics = {}, {}
     feature_terms, drift_terms = [], []
     for name, values in generated.items():
+        if name not in positives:
+            raise ValueError("positive encoder feature names changed")
+        drift, detail = drifting_loss(values, positives[name])
+        scale = detail["scale_inputs"]
+        diagnostics[name] = detail
         if need_feature:
             if name not in paired or paired[name].shape != values.shape:
                 raise ValueError("paired encoder feature layout changed")
             feature_terms.append(((values - paired[name]) / scale).square().mean())
         if need_drift:
-            if name not in positives:
-                raise ValueError("positive encoder feature names changed")
-            drift, detail = drifting_loss(values / scale, positives[name] / scale,
-                                          temperature=temperature)
             drift_terms.append(drift)
-            diagnostics[name] = {"field_rms": detail["field_rms"]}
     if need_feature:
         losses["feature"] = _finite_loss(torch.stack(feature_terms).mean())
     if need_drift:

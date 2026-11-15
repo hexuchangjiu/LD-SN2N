@@ -1,0 +1,47 @@
+{
+  "gates": {
+    "noise_L05": true,
+    "noise_2of3": true,
+    "mean": true,
+    "per_frame_corr": true,
+    "relative_mse": true,
+    "finite_means": true,
+    "shape": true,
+    "state_dependence": true,
+    "independent_draws": true
+  },
+  "status": "PASS",
+  "scalar_gain": 1.2038610407153079,
+  "source_camera_sha": "820abc96535401cabb31d6e6c146aef3b863a7e3b3cd2ed0b325c6fb743cab7a",
+  "new_camera_sha": "b567289e7f087678b747c79f8a1ca7b784cb66142cd24774b35277352ff6d0c9",
+  "source_d1_sha": "c2d76dfd0c92cc5e77bdbfff7324db174de6f5f91f08158d8b61081c1af0d015",
+  "source_model_sha": "f11e8d3819ecf2aba9a92b056fcb9f2376171c890bf336e037bd439a090b4c04",
+  "scope": "Same measured source, same measured D1 input, same spatial tiles; baseline camera frozen in original D1 chart. Same-source technical transfer not external validation.",
+  "n_fit_detector_values": 1544652,
+  "fitted_parameter_count": 1,
+  "method": "Single positive scale in frozen emitter proxy to ADU forward gain fit on original train-mask only. Shared by all 9 raw phases and all states. Nine fixed smooth backgrounds, optical parameters, ED noise and read law identical. Not a change to denoiser or reconstruction.",
+  "before_scale": {
+    "gain_dc": [
+      2572.22509765625,
+      2571.552978515625,
+      2575.044921875,
+      2549.673095703125,
+      2548.873046875,
+      2566.195068359375,
+      2232.53515625,
+      2248.375244140625,
+      2240.339111328125
+    ],
+    "gain_ac": [
+      2572.22509765625,
+      2571.552978515625,
+      2561.04345703125,
+      2549.673095703125,
+      2548.873046875,
+      2306.3232421875,
+      2232.53515625,
+      2248.375244140625,
+      2051.106689453125
+    ]
+  }
+}

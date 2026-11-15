@@ -1,13 +1,8 @@
 * text=auto eol=lf
-*.md whitespace=-blank-at-eol
-# Preserve exact frozen research sources and upstream notice bytes.
-loop-Drift/fiji_calibrated_plugin/backend/noise_calibration.py -text -whitespace
-loop-Drift/fiji_calibrated_plugin/backend/support_display.py -text -whitespace
-loop-Drift/fiji_calibrated_plugin/backend/vendor/*.py -text -whitespace
-loop-Drift/third_party/*.txt -text -whitespace
-*.zip binary
 *.jar binary
-plugin/example/*.tif binary
-plugin/example/*.pth binary
-loop-Drift/releases export-ignore
-loop-Drift/releases/**/release_manifest.json -text whitespace=cr-at-eol
+*.npz binary
+*.tif binary
+*.mrc binary
+*.class binary
+*.f32 binary
+examples/runtime/** -text

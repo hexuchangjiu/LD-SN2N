@@ -1,19 +1,70 @@
-name: Python contracts
+name: Core checks
 on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
 jobs:
-  contracts:
+  core:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: loop-Drift
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: pip
-          cache-dependency-path: loop-Drift/requirements.txt
-      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-      - run: python -m pip install -r requirements.txt
-      - run: python scripts/check_runtime.py --json
-      - run: python -m unittest discover -s tests -v
+      - name: Install numerical dependencies
+        run: |
+          python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install numpy scipy scikit-image
+      - name: Check feedback measurements and training gradients
+        shell: python {0}
+        run: |
+          import numpy as np
+          import torch
+          from loopdrift.loop import evaluate_loop, feedback, render_2d_colormap, signature_map_from_Y
+          from loopdrift.objectives import combine_objectives, feature_objectives, sn2n_constraint
+
+          rng = np.random.default_rng(17)
+          image = rng.uniform(size=(32, 32))
+          fields = rng.normal(0, 0.01, (5, 2, 32, 32))
+          calls = []
+          def denoise(x):
+              calls.append(1)
+              return 0.5 * (x + np.roll(x, 1, axis=0))
+          def perturb(x, stream, step):
+              return x + fields[stream, step - 1]
+          recursive = feedback(image, denoise, perturb)
+          anchored = feedback(image, denoise, perturb, anchored=True)
+          assert len(calls) == 22
+          np.testing.assert_array_equal(recursive[:, :2], anchored[:, :2])
+          assert not np.array_equal(recursive[:, 2], anchored[:, 2])
+          assert evaluate_loop(recursive)["signature"]["T"] == 3
+          m = signature_map_from_Y(recursive, eps=0.1)
+          rgb = render_2d_colormap(m["gamma"], m["C_stab"], structure_valid=m["structure_valid"])
+          assert rgb.shape == (32, 32, 3) and np.isfinite(rgb).all()
+
+          class Encoder(torch.nn.Module):
+              def __init__(self):
+                  super().__init__()
+                  self.layer = torch.nn.Conv2d(1, 3, 3, padding=1)
+              def features(self, x):
+                  return {"local": self.layer(x)}
+          torch.manual_seed(71)
+          torch.set_num_threads(1)
+          encoder = Encoder().eval().requires_grad_(False)
+          student = torch.nn.Conv2d(1, 1, 3, padding=1)
+          a, b = [torch.rand(4, 1, 16, 16) for _ in range(2)]
+          teacher, positive = [torch.rand_like(a, requires_grad=True) for _ in range(2)]
+          out = student(a)
+          losses, _ = feature_objectives(out, teacher, positive, encoder)
+          losses["sn2n"], _ = sn2n_constraint(out, student(b), a, b)
+          loss = combine_objectives(losses, family="drift", family_scale=0.5, sn2n_weight=1)
+          assert torch.isfinite(losses["feature"]) and torch.isfinite(loss)
+          loss.backward()
+          assert student.weight.grad.isfinite().all() and student.weight.grad.norm() > 0
+          assert teacher.grad is None and positive.grad is None and encoder.layer.weight.grad is None

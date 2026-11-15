@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "gates": {
+    "noise_L05": true,
+    "noise_2of3": true,
+    "mean": true,
+    "per_frame_corr": true,
+    "relative_mse": true,
+    "finite_means": true,
+    "shape": true,
+    "state_dependence": true,
+    "independent_draws": true
+  },
+  "gate_sha256": "229a61817f1a95b87c21411d1620063f765c5797ad7b52b3d3ae6567d0430c58",
+  "camera_sha256": "a9a6470a32284c64b3e998dece299075ffd0df76c12670e599c4eaf3b54ba1e5",
+  "npz_sha256": "820abc96535401cabb31d6e6c146aef3b863a7e3b3cd2ed0b325c6fb743cab7a",
+  "source": "Project empirical state-conditioned re-exposure in acquisition domain, not official camera software or dark-frame sensor calibration",
+  "physics": "raw Photon-Poisson + empirical Gaussian effective noise + bias, quantized to digitizer. Optics: patterned emitter proxy, measured BioSR OTF, 2x2 bin integration. Source optical phase/angle from rDL-SIM fit; no normalization between states.",
+  "units": "camera ADU excess over mean bias; shot means in photons using authors average count conversion",
+  "conversion": 0.6026,
+  "bias": 100.0,
+  "read_sd_effective_adu": 4.431325900697867,
+  "limit": "Haar proxy may include unresolved structure, fixed pattern, shot scale error and camera correlation. L05 same-image spatial check, not independent validation. Noise transfer uses Cell002 withheld from intercept fitting. Background fitted to broad spatial scales in raw domain; not a pure reconstruction from the network alone."
+}

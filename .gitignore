@@ -1,19 +1,18 @@
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 *.egg-info/
 build/
 dist/
-loop-Drift/fiji_calibrated_plugin/java/target/
-runtime_config.json
 outputs/
-demo_assets/
 *.pt
 *.pth
+*.ts
 *.tif
 *.tiff
-.pytest_cache/
-
-# Explicit small usage example; the research dataset and checkpoint bank remain excluded.
-!plugin/example/LAMP_C1_first150_center128_uint16.tif
-!plugin/example/SN2N_LAMP_seed400101_update24000.pth
+*.mrc
+*.zip
+!examples/data/Simulation.tif
+!examples/data/BioSR_MT.mrc
+!examples/runtime/raw/recon_assets/TIRF_OTF2D_488.mrc
