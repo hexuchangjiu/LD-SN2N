@@ -4,7 +4,7 @@
 
 Close [Fiji](https://fiji.sc/), download and extract this repository, and open a terminal in the extracted folder. With Python 3.10 or 3.11, run the command below. Replace the path with the Fiji directory that contains `plugins` and `jars`.
 
-关闭 Fiji，解压仓库，在仓库目录运行以下命令。路径指向 Fiji 安装目录；第一次安装需要联网。
+For the BioSR example, use Fiji with Java 21. 关闭 Fiji，解压仓库，在仓库目录运行以下命令。BioSR 需要 Fiji 使用 Java 21；第一次安装需要联网。
 
 ```sh
 python examples/prepare.py --fiji "C:/Fiji.app"
