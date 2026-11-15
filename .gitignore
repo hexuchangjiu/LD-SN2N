@@ -16,3 +16,6 @@ outputs/
 !examples/data/Simulation.tif
 !examples/data/BioSR_MT.mrc
 !examples/runtime/raw/recon_assets/TIRF_OTF2D_488.mrc
+examples/runtime/venv/
+examples/runtime/raw/recon_assets/fairSIM_plugin.jar
+.prepare-*/
