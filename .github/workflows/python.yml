@@ -23,6 +23,8 @@ jobs:
           python -m pip install numpy scipy scikit-image
       - name: Check feedback measurements and training gradients
         shell: python {0}
+        env:
+          PYTHONPATH: ${{ github.workspace }}/loop-Drift
         run: |
           import numpy as np
           import torch
